@@ -1,0 +1,5 @@
+drnum Test = 2;
+dr Text = "Hello World!";
+dr Hey = AutoPut;
+Output Text;
+Output Hey;
