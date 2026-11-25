@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  drix:
+    build: .
+    container_name: drix-lang-container
+    volumes:
+      - ./Drix_Languange:/app
+    restart: unless-stopped
