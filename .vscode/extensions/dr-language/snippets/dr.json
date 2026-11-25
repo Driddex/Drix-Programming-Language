@@ -1,0 +1,23 @@
+{
+  "Create Number Variable": {
+    "prefix": "drnum",
+    "body": ["drnum ${1:name} = ${2:0};"],
+    "description": "Create Number Variable"
+  },
+  "Create String Variable": {
+    "prefix": "dr",
+    "body": ["dr ${1:name} = \"${2:text}\";"],
+    "description": "Create Text Variable"
+  },
+  "Print Output": {
+    "prefix": "Output",
+    "body": ["Output ${1:value};"],
+    "description": "Output (Value)"
+  },
+  "Output": {
+    "prefix": "AutoPut",
+    "body": ["AutoPut;"],
+    "description": "AutoPut Test Val"
+  }
+  
+}

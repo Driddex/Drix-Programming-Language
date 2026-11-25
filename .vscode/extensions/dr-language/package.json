@@ -1,0 +1,32 @@
+{
+  "name": "dr-language",
+  "displayName": "Drix Programming Language",
+  "version": "1.0.0",
+  "engines": { "vscode": "^1.80.0" },
+  "contributes": {
+    "languages": [
+      {
+        "id": "drlang",
+        "aliases": ["DR Language", "dr"],
+        "extensions": [".dr"],
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "drlang",
+        "scopeName": "source.dr",
+        "path": "./syntaxes/dr.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "drlang",
+        "path": "./snippets/dr.json"
+      }
+    ]
+  }
+}

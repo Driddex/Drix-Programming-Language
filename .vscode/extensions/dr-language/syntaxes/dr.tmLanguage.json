@@ -1,0 +1,21 @@
+{
+  "scopeName": "source.dr",
+  "patterns": [
+    {
+      "name": "keyword.control.dr",
+      "match": "\\b(dr|drnum|Output)\\b"
+    },
+    {
+      "name": "string.quoted.double.dr",
+      "match": "\".*?\""
+    },
+    {
+      "name": "constant.numeric.dr",
+      "match": "\\b[0-9]+\\b"
+    },
+    {
+      "name": "entity.name.function.dr",
+      "match": "AutoPut"
+    }
+  ]
+}
