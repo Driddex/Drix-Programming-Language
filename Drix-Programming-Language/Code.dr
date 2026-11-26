@@ -1,5 +1,15 @@
-drnum Test = 2;
-dr Text = "Hello World!";
-dr Hey = AutoPut;
-Output Text;
-Output Hey;
+drnum x = 10;
+dr name;
+
+Func CheckNumber() {
+    Output "booted";
+    if (x == 10) {
+        Output "if worked";
+    } else {
+        Output "else worked";
+    }
+    Output "end";
+}
+
+CheckNumber();
+Output "w";

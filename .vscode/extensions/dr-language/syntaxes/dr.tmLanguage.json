@@ -3,7 +3,7 @@
   "patterns": [
     {
       "name": "keyword.control.dr",
-      "match": "\\b(dr|drnum|Output)\\b"
+      "match": "\\b(dr|drnum|Output|if|else|Func)\\b"
     },
     {
       "name": "string.quoted.double.dr",
@@ -15,7 +15,11 @@
     },
     {
       "name": "entity.name.function.dr",
-      "match": "AutoPut"
+      "match": "\\b(Ignore|Input|AutoPut|Stop)\\b"
+    },
+    {
+      "name": "comment.line.double-pipe.dr",
+      "match": "\\|\\|.*$"
     }
   ]
 }

@@ -14,10 +14,39 @@
     "body": ["Output ${1:value};"],
     "description": "Output (Value)"
   },
-  "Output": {
+  "AutoPut Outputer": {
     "prefix": "AutoPut",
     "body": ["AutoPut;"],
     "description": "AutoPut Test Val"
+  },
+  "Ignore Next Line": {
+    "prefix": "Ignore",
+    "body": ["Ignore ${1:text};"],
+    "description": "Ignore The next line"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if (...) {\n\n};"],
+    "description": "If"
+  },
+    "else": {
+    "prefix": "else",
+    "body": ["else{\n\n}"],
+    "description": "else"
+  },
+    "Input Variable": {
+    "prefix": "Input",
+    "body": ["Input ${1:dr}"],
+    "description": "Input Function"
+  },
+    "Stop": {
+    "prefix": "Stop",
+    "body": ["Stop;"],
+    "description": "Stop the entire code"
+  },
+    "Function": {
+    "prefix": "Func",
+    "body": ["Func name(){\n\n};"],
+    "description": "Use The Function System"
   }
-  
 }

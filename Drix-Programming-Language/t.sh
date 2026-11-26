@@ -1,2 +1,1 @@
-g++ Drix.cpp -o run.exe
-./run.exe
+wsl g++ Drix.cpp -o dr.exe
