@@ -13,3 +13,4 @@ Func CheckNumber() {
 
 CheckNumber();
 Output "w";
+

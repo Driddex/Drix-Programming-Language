@@ -1,1 +1,0 @@
-wsl g++ Drix.cpp -o dr.exe
