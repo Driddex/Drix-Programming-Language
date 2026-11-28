@@ -16,6 +16,7 @@ enum class TokenList{
     Less,
     Equal,
     NotEqual,
+    Dot,
 
     KeywordDr,
     KeywordDrnum,
@@ -27,6 +28,8 @@ enum class TokenList{
     KeywordInput,
     KeywordStop,
     KeywordFunc,
+    KeywordLength,
+    KeywordUse,
 };
 
 struct Token{

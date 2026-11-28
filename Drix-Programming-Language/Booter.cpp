@@ -19,6 +19,9 @@ void Executer::Execute(std::vector<Token>& Tokens,Environment& env){
     Ignore IgnoreHandler;
     If IfHandler;
     Else ElseHandler;
+    Length LengthHandler;
+    Use UseHandler;
+    System SystemHandler;
 
     while (i < Tokens.size()){
         if (Tokens[i].token == TokenList::KeywordDr){
@@ -34,7 +37,7 @@ void Executer::Execute(std::vector<Token>& Tokens,Environment& env){
             InputHandler.Execute(Tokens,i,env);
         }
         else if (Tokens[i].token == TokenList::KeywordIf){
-            IfHandler.Execute(Tokens,i,env);
+            IfHandler.Execute(Tokens,i,env,FuncHandler);
         }
         else if (Tokens[i].token == TokenList::KeywordElse){
             ElseHandler.Execute(Tokens,i,env);
@@ -45,12 +48,24 @@ void Executer::Execute(std::vector<Token>& Tokens,Environment& env){
         else if (Tokens[i].token == TokenList::KeywordOutput){
             OutputHandler.Execute(Tokens,i,env);
         }
+        else if (Tokens[i].token == TokenList::KeywordLength){
+            LengthHandler.Execute(Tokens,i,env);
+        }
+        else if (Tokens[i].token == TokenList::KeywordUse){
+            UseHandler.Activate(Tokens,i);
+        }
         else if (Tokens[i].token == TokenList::Variable && i + 1 < Tokens.size()){
             if (Tokens[i + 1].token == TokenList::Assign){
                 AssigneHandler.Execute(Tokens, i, env);
             }
             else if (Tokens[i + 1].token == TokenList::Parentheses){
                 FuncHandler.CallFunction(Tokens, i, env);
+            }
+            else if (Tokens[i + 1].token == TokenList::Dot){
+                if (Tokens[i].val == "system"){
+                    SystemHandler.Execute(Tokens, i, env, UseHandler);
+                }
+                else { i++; }
             }
             else { i++; }
         }

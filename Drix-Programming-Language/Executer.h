@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <map>
+#include <string>
 #include "Environment.h"
 #include "Tokens.h"
 
@@ -38,16 +40,6 @@ class Assigne{
         void Execute(const std::vector<Token>& Tokens,int&i, Environment& env);
 };
 
-class If{
-    public:
-        void Execute(const std::vector<Token>& Tokens,int&i, Environment& env);
-};
-
-class Else{
-    public:
-        void Execute(const std::vector<Token>& Tokens,int&i, Environment& env);
-};
-
 class Function{
     private:
         std::map<std::string, int> func;
@@ -58,6 +50,37 @@ class Function{
         void CallFunction(const std::vector<Token>& Tokens,int&i, Environment& env);
         void OnLBrace();
         bool OnRBrace(int& i);
+};
+
+class If{
+    public:
+        void Execute(const std::vector<Token>& Tokens, int& i, Environment& env, Function& func);
+};
+
+class Else{
+    public:
+        void Execute(const std::vector<Token>& Tokens,int&i, Environment& env);
+};
+
+class Length{
+    public:
+        void Execute(const std::vector<Token>& Tokens,int&i, Environment& env);
+};
+
+class Use{
+    private:
+        std::vector<std::string> exist = {"system"};
+        std::vector<std::string> uses;
+    public:
+        void Activate(const std::vector<Token>& Tokens,int&i);
+        bool IsActivated(const std::string& libname);
+};
+
+class System{
+    private:
+        void RunCmd(const std::vector<Token>& Tokens, int& i, Environment& env);
+    public:
+        void Execute(const std::vector<Token>& Tokens, int& i, Environment& env, Use& use);
 };
 
 class Executer{

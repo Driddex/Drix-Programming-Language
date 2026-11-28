@@ -100,6 +100,14 @@ std::vector<Token> Lexer::Tokenize(const std::string& code){
             tok.line = currentline;
             Tokens.push_back(tok);
         }
+        else if (current == '.'){
+            Token tok;
+
+            tok.token = TokenList::Dot;
+            tok.val = current;
+            tok.line = currentline;
+            Tokens.push_back(tok);
+        }
         else if (current == '('){
             Token tok;
 
@@ -177,6 +185,24 @@ std::vector<Token> Lexer::Tokenize(const std::string& code){
                 Token tok;
 
                 tok.token = TokenList::KeywordFunc;
+                tok.val = eq;
+                tok.line = currentline;
+                Tokens.push_back(tok);
+                eq = "";
+            }
+            else if (eq == "use"){
+                Token tok;
+
+                tok.token = TokenList::KeywordUse;
+                tok.val = eq;
+                tok.line = currentline;
+                Tokens.push_back(tok);
+                eq = "";
+            }
+            else if (eq == "length"){
+                Token tok;
+
+                tok.token = TokenList::KeywordLength;
                 tok.val = eq;
                 tok.line = currentline;
                 Tokens.push_back(tok);

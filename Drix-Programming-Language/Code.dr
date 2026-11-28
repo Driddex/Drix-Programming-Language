@@ -1,16 +1,2 @@
-drnum x = 10;
-dr name;
-
-Func CheckNumber() {
-    Output "booted";
-    if (x == 10) {
-        Output "if worked";
-    } else {
-        Output "else worked";
-    }
-    Output "end";
-}
-
-CheckNumber();
-Output "w";
-
+use <"system">;
+system.command("ls");

@@ -48,5 +48,10 @@
     "prefix": "Func",
     "body": ["Func name(){\n\n};"],
     "description": "Use The Function System"
+  },
+    "use": {
+    "prefix": "use",
+    "body": ["use <>;"],
+    "description": "Use The Libraries"
   }
 }

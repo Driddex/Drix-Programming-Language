@@ -4,7 +4,7 @@
 #include <vector>
 #include "../Executer.h"
 
-void If::Execute(const std::vector<Token>& Tokens, int&i, Environment& env){
+void If::Execute(const std::vector<Token>& Tokens, int&i, Environment& env,Function& func){
     if (i + 6 < Tokens.size()){
         if (Tokens[i + 1].token == TokenList::Parentheses && Tokens[i + 5].token == TokenList::Parentheses){
             bool is_true = false;
@@ -61,10 +61,14 @@ void If::Execute(const std::vector<Token>& Tokens, int&i, Environment& env){
                     is_true = true;
                 }
             }
+
             if (is_true == true){
-                i+=7;
+                func.OnLBrace();
+                i += 7;
             }
+
             else if (is_true == false){
+                func.OnLBrace();
                 i+=6;
                 int braces = 0;
                 while (i < Tokens.size()){

@@ -1,2 +1,6 @@
 cd Dr*
-wsl g++ Booter.cpp Functional/*.cpp -o dr.exe
+g++ -std=c++17 *.cpp Functional/*.cpp -o dr.exe
+
+
+
+
